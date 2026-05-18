@@ -229,8 +229,8 @@ let reservations = {
 let useFirebase = false;
 let db = null;
 
-try {
-    const firebaseConfig = {
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
   apiKey: "AIzaSyA1XuuCYE2RnipFHQ0d9dCjGNlPtgwvWmw",
   authDomain: "youthnarooschedule.firebaseapp.com",
   projectId: "youthnarooschedule",
@@ -239,15 +239,6 @@ try {
   appId: "1:53441811066:web:cc3604e124ca94778ca1c3",
   measurementId: "G-ME8HDTV2FV"
 };
-
-    if (firebaseConfig.apiKey !== 'AIzaSyA1XuuCYE2RnipFHQ0d9dCjGNlPtgwvWmw') {
-        const app = initializeApp(firebaseConfig);
-        db = getFirestore(app);
-        useFirebase = true;
-    }
-} catch (e) {
-    console.log('Firebase 사용 안함');
-}
 
 function renderSelectors() {
     const container = document.getElementById('group-selectors');
